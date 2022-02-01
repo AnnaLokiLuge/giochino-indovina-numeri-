@@ -28,5 +28,5 @@ verifica.on('click', function () {
     }
 });
 reset.on('click', function () {
-    $('#rimuovi')[0].reset();
+    window.location.reload();
 });
