@@ -1,13 +1,15 @@
 "use strict";
-let giocatore1 = Number($('#giocatore1').val());
-let giocatore2 = Number($('#giocatore2').val());
+let giocatore1;
+let giocatore2;
 let nRandom = Math.floor(Math.random() * 100);
 let vincitore = $('#vincitore');
 let verifica = $('#verifica');
-let quasi1 = Math.abs(nRandom - giocatore1);
-let quasi2 = Math.abs(nRandom - giocatore2);
 let reset = $('#reset');
 verifica.on('click', function () {
+    giocatore1 = Number($('#giocatore1').val());
+    giocatore2 = Number($('#giocatore2').val());
+    let quasi1 = Math.abs(nRandom - giocatore1);
+    let quasi2 = Math.abs(nRandom - giocatore2);
     let numeroUscito = $('#numeroUscito').text('Il numero uscito è: ' + nRandom);
     if (!giocatore1 || !giocatore2) {
         vincitore.text('tutti i giocatori devono inserire un numero');
@@ -28,5 +30,5 @@ verifica.on('click', function () {
     }
 });
 reset.on('click', function () {
-    $('#rimuovi')[0].reset();
+    window.location.reload();
 });
